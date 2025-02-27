@@ -9,25 +9,38 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   // creazione funzione per ricerca dell' utente nella barra di ricerca
-  function handleSearch(filmName) {
+  function handleSearch(searchInput) {
 
-    // definizione costante url con endpoint
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=2cd30f9da4642da67ee7423f60006f8a&query=${filmName}&language=it-IT`;
+    // definizione costante filmUrl con endpoint del database dei film
+    const filmUrl = `https://api.themoviedb.org/3/search/movie?api_key=2cd30f9da4642da67ee7423f60006f8a&query=${searchInput}&language=it-IT`;
 
-    // invio richiesta con Axios
-    axios.get(url).then(function (response) {
+    // definizione costante seriesUrl con endpoint del database delle serie tv
+    const seriesUrl = `https://api.themoviedb.org/3/search/tv?api_key=2cd30f9da4642da67ee7423f60006f8a&query=${searchInput}&language=it-IT`;
+
+    // invio richiesta con Axios per i film
+    axios.get(filmUrl).then(function (filmResponse) {
 
       // console log dell'oggetto con i film trovati
-      console.log(response.data.results);
+      console.log(filmResponse.data.results);
 
-      // aggiorno "movies" con i dati dei film importati grazie a SetMovies
-      setMovies(response.data.results);
+
+      // invio seconda richiesta con Axios per le serie tv
+      axios.get(seriesUrl).then(function (serietvResponse) {
+
+        // console log dell'oggetto con le serie tv trovate
+        console.log(serietvResponse.data.results);
+
+        // sommo i risultati delle due risposte
+        const filmAndSeriesResults = [...filmResponse.data.results, ...serietvResponse.data.results];
+
+        setMovies(filmAndSeriesResults);
+      });
     });
   }
 
   return (
     <div>
-      <h1>Ricerca Film :</h1>
+      <h1>Ricerca Film e serie tv:</h1>
       {/* inclusione componente SearchBar a cui donare la prop handlesearch */}
       <SearchBar handleSearch={handleSearch} />
       {/* inclusione componente MovieList a cui donare la prop movies */}

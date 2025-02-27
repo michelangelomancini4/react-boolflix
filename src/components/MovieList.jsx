@@ -11,10 +11,11 @@ function MovieList(props) {
                 // se ci sono film corrispondenti genero l'output con le info del film mappando l'oggetto ricevuto in prop
                 props.movies.map((movie) => (
                     <div key={movie.id}>
-                        <h3>{movie.title}</h3>
-                        <label>Titolo originale:{movie.original_title}</label>
-                        <p>Lingua: {movie.original_language}</p>
-                        <span>Voto: {movie.vote_average}</span>
+                        <h3>{movie.title || movie.name}</h3>
+                        <p>Titolo originale:{movie.original_title || movie.original_name}</p>
+                        <img src="" alt={movie.original_language} />
+
+                        <p>Voto: {movie.vote_average}</p>
                     </div>
                 ))
             ) : (
