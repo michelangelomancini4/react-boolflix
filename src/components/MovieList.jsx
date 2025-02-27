@@ -8,6 +8,7 @@ function MovieList(props) {
         const stars = Math.ceil(vote / 2);
         const starsArray = [];
 
+
         // Aggiungo le stelle piene
         for (let i = 0; i < stars; i++) {
             starsArray.push(<i key={i} className="fas fa-star"></i>);
@@ -42,6 +43,7 @@ function MovieList(props) {
                         <h3>{movie.title || movie.name}</h3>
                         <p>Titolo originale:{movie.original_title || movie.original_name}</p>
                         <p>Voto: {getStars(movie.vote_average)}</p>
+                        <img src="../public/images/{movie.original_language}.jpg" alt="" />
                     </div>
                 ))
             ) : (
