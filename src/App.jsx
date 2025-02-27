@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import axios from "axios";
+
+// importazione dei componenti
+import SearchBar from "./components/SearchBar";
+import MovieList from "./components/MovieList";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [movies, setMovies] = useState([]);
+
+  // creazione funzione per ricerca dell' utente nella barra di ricerca
+  function handleSearch(filmName) {
+
+    // definizione costante url con endpoint
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=2cd30f9da4642da67ee7423f60006f8a&query=${filmName}&language=it-IT`;
+
+    // invio richiesta con Axios
+    axios.get(url).then(function (response) {
+
+      // console log dell'oggetto con i film trovati
+      console.log(response.data.results);
+
+      // aggiorno "movies" con i dati dei film importati grazie a SetMovies
+      setMovies(response.data.results);
+    });
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Ricerca Film :</h1>
+      {/* inclusione componente SearchBar a cui donare la prop handlesearch */}
+      <SearchBar handleSearch={handleSearch} />
+      {/* inclusione componente MovieList a cui donare la prop movies */}
+      <MovieList movies={movies} />
+    </div>
+  );
 }
 
-export default App
+export default App;
