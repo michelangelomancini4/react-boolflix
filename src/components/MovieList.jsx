@@ -13,8 +13,7 @@ function MovieList(props) {
                     <div key={movie.id}>
                         <h3>{movie.title || movie.name}</h3>
                         <p>Titolo originale:{movie.original_title || movie.original_name}</p>
-                        <img src="" alt={movie.original_language} />
-
+                        <img src={`http://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.original_language} />
                         <p>Voto: {movie.vote_average}</p>
                     </div>
                 ))
