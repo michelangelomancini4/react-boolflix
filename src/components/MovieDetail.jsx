@@ -25,7 +25,7 @@ function MovieDetail() {
         });
     }, [id]);
 
-    // output stars rating
+    // output stars rating per il voto
     function getStars(vote) {
         const stars = Math.ceil(vote / 2);
         const starsArray = [];
@@ -39,6 +39,7 @@ function MovieDetail() {
 
         return starsArray;
     }
+    // output stars rating per popoluraity
     function getPopularity(popularity) {
         const popstars = Math.ceil(popularity / 10);
         const popstarsArray = [];
@@ -46,7 +47,7 @@ function MovieDetail() {
         for (let i = 0; i < popstars; i++) {
             popstarsArray.push(<i key={i} className="fas fa-star"></i>);
         }
-        for (let i = popstars; i < 10; i++) {
+        for (let i = popstars; i < 15; i++) {
             popstarsArray.push(<i key={i} className="far fa-star"></i>);
         }
 

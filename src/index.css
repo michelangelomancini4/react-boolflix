@@ -15,8 +15,9 @@
 a {
   font-weight: 500;
   color: #dfc415;
-  text-decoration: inherit;
+  text-decoration: none;
 }
+
 
 a:hover {
   color: #c5f100;
@@ -43,16 +44,22 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   height: 190px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
 }
 
 header h2 {
   margin-top: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+
 }
 
 .logo {
   /* width: 300px; */
   font-size: 75px;
-  margin-top: 125px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+
 }
 
 .searchbar {
@@ -92,6 +99,8 @@ header h2 {
   text-align: center;
   border-radius: 10px;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+
 }
 
 .standardcard {
@@ -129,7 +138,9 @@ header h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
+
 
 /* regole MovieDetail */
 
@@ -138,11 +149,14 @@ header h2 {
   justify-content: space-evenly;
 }
 
-.movie-detail {}
 
 .infofilm {
   width: 60%;
-  margin-top: 20px;
+  margin-top: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-height: fit-content;
+
 
 }
 
@@ -155,6 +169,8 @@ header h2 {
   color: #c5f100;
 
 }
+
+
 
 .movie-detail img {
   height: 600px;
@@ -199,4 +215,30 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Responsivity*/
+@media (max-width: 1200px) {
+  .movie-card {
+    width: 45%;
+  }
+
+  .infofilm {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 50px;
+    margin: 20px 0;
+  }
+
+  .movie-card {
+    width: 100%;
+  }
 }
