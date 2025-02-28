@@ -26,8 +26,7 @@ function MovieCard({ movie }) {
     return (
         <>
 
-            <div
-                className="movie-card"
+            <div className="movie-card"
                 style={{
                     backgroundImage: `url(https://image.tmdb.org/t/p/w342${movie.poster_path})`,
 
@@ -35,12 +34,14 @@ function MovieCard({ movie }) {
             >
                 {/* uso di || per differenziare proprietà diverse tra film e serie tv */}
                 <h3>Titolo:{movie.title || movie.name}</h3>
+
                 <p>Titolo originale: {movie.original_title || movie.original_name}</p>
                 <p>Voto: {getStars(movie.vote_average)}</p>
                 <img className="flagpath" src={flagPath} alt={movie.original_language} />
 
 
             </div>
+
         </>
     );
 }

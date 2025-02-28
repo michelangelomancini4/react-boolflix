@@ -40,11 +40,14 @@ function App() {
 
   return (
     <div>
-      <h1>Ricerca Film e serie tv:</h1>
+
       {/* inclusione componente SearchBar a cui donare la prop handlesearch */}
       <Header handleSearch={handleSearch} />
-      {/* inclusione componente MovieList a cui donare la prop movies */}
-      <MovieList movies={movies} />
+      <h2>Risultati:</h2>
+      <div >
+        {/* inclusione componente MovieList a cui donare la prop movies */}
+        <MovieList movies={movies} />
+      </div>
     </div>
   );
 }

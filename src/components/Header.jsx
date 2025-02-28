@@ -4,11 +4,14 @@ import SearchBar from "./SearchBar";
 export default function Header({ handleSearch }) {
 
 
-    return (<header>
+    return (
+        <header>
 
-
-        <div>
-            <SearchBar handleSearch={handleSearch} />
-        </div>
-    </header>);
+            <img src="../public/logo/cinemalogo.jpg" alt="" />
+            <h2>Ricerca film e serie tv!</h2>
+            <div className="searchbar">
+                <SearchBar handleSearch={handleSearch} />
+            </div>
+        </header>
+    );
 }

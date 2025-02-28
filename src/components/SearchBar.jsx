@@ -21,11 +21,12 @@ function SearchBar(props) {
         <div>
             <input
                 type="text"
+                className="input"
                 placeholder="Cerca un film o una serie tv"
                 value={film}
                 onChange={(event) => setFilm(event.target.value)}
             />
-            <button onClick={SearchClick}>Cerca!</button>
+            <button className="cercaButton" onClick={SearchClick}>Cerca!</button>
         </div>
     );
 }

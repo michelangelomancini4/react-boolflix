@@ -2,8 +2,9 @@ import MovieCard from "./MovieCard";
 
 function MovieList({ movies }) {
     return (
-        <div>
-            <h2>Risultati:</h2>
+        <div className="cardContainer">
+
+
             {/* controllo se ci sono film o serie tv corrispondenti alla ricerca */}
             {movies.length > 0 ? (
 
