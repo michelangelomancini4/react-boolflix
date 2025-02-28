@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import MovieDetail from "./components/MovieDetail";
 
 
+
 function App() {
   const [movies, setMovies] = useState([]);
 
@@ -23,7 +24,7 @@ function App() {
     // invio richiesta con Axios per i film
     axios.get(filmUrl).then(function (filmResponse) {
 
-      // console log dell'oggetto con i film trovati
+      // console log dell'oggetto con i film trovati 
       console.log(filmResponse.data.results);
 
 

@@ -14,12 +14,12 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #dfc415;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+  color: #c5f100;
 }
 
 body {
@@ -129,6 +129,39 @@ header h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* regole MovieDetail */
+
+.detailBlockInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.movie-detail {}
+
+.infofilm {
+  width: 60%;
+  margin-top: 20px;
+
+}
+
+.infofilm p {
+  margin-bottom: 28px;
+
+}
+
+.movie-detail img {
+  height: 600px;
+  margin-left: 30px;
+
+}
+
+
+.prevnext {
+  text-align: end;
+  margin-right: 30px;
+  font-size: 20px;
 }
 
 /* regole trama film/serietv */
