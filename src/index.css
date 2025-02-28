@@ -151,6 +151,11 @@ header h2 {
 
 }
 
+.infofilm label {
+  color: #c5f100;
+
+}
+
 .movie-detail img {
   height: 600px;
   margin-left: 30px;

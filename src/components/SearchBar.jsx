@@ -13,6 +13,7 @@ function SearchBar(props) {
 
         // richiamo funzione con props di app.jsx
         props.handleSearch(film);
+        setFilm("");
     }
 
     // ouptut in pagina

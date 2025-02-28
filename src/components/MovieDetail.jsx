@@ -68,6 +68,7 @@ function MovieDetail() {
                 {/* blocco di destra con info */}
                 <div className="infofilm">
                     <p><strong>Titolo originale:</strong> {movie.original_title || movie.original_name}</p>
+                    <p><strong>Data di uscita:</strong>{movie.release_date}</p>
                     <p><strong>Overview:</strong> {movie.overview}</p>
 
                     <label><strong>Voto:</strong> {getStars(movie.vote_average)}</label>
