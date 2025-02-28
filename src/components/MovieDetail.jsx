@@ -39,6 +39,19 @@ function MovieDetail() {
 
         return starsArray;
     }
+    function getPopularity(popularity) {
+        const popstars = Math.ceil(popularity / 10);
+        const popstarsArray = [];
+
+        for (let i = 0; i < popstars; i++) {
+            popstarsArray.push(<i key={i} className="fas fa-star"></i>);
+        }
+        for (let i = popstars; i < 10; i++) {
+            popstarsArray.push(<i key={i} className="far fa-star"></i>);
+        }
+
+        return popstarsArray;
+    }
 
     const flagPath = `/images/${movie.original_language}.jpg`;
 
@@ -72,6 +85,7 @@ function MovieDetail() {
                     <p><strong>Overview:</strong> {movie.overview}</p>
 
                     <label><strong>Voto:</strong> {getStars(movie.vote_average)}</label>
+                    <p><strong>Popolarità:</strong> {getPopularity(movie.popularity)}</p>
                     <img className="flagpath" src={flagPath} alt={movie.original_language} />
 
                 </div>
