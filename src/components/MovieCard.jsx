@@ -34,12 +34,12 @@ function MovieCard({ movie }) {
             >
                 {/* gestione output delle info in overlay */}
                 <div className="card-overlay">
-                    <h3>Titolo:{movie.title || movie.name}</h3>
+                    <h3>{movie.title || movie.name}</h3>
 
-                    <p>Titolo originale: {movie.original_title || movie.original_name}</p>
-                    <p className="overview">Overview: {movie.overview}</p>
+                    <p><strong>Titolo originale:</strong> {movie.original_title || movie.original_name}</p>
+                    <p className="overview"><strong>Overview:</strong> {movie.overview}</p>
 
-                    <label>Voto: {getStars(movie.vote_average)}</label>
+                    <label><strong>Voto:</strong> {getStars(movie.vote_average)}</label>
                     <img className="flagpath" src={flagPath} alt={movie.original_language} />
                 </div>
 

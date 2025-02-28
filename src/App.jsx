@@ -43,7 +43,7 @@ function App() {
 
       {/* inclusione componente SearchBar a cui donare la prop handlesearch */}
       <Header handleSearch={handleSearch} />
-      <h2>Risultati:</h2>
+      <h2 className="resultsh2">Risultati:</h2>
       <div >
         {/* inclusione componente MovieList a cui donare la prop movies */}
         <MovieList movies={movies} />

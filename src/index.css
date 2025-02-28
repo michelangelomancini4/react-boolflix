@@ -49,17 +49,27 @@ header h2 {
   margin-top: 30px;
 }
 
+.logo {
+  /* width: 300px; */
+  font-size: 75px;
+  margin-top: 125px;
+}
+
 .searchbar {
   margin-top: 35px;
 }
 
 .input {
-  background-color: yellowgreen;
+  background-color: rgb(233, 235, 229);
   height: 32px;
   width: 220px;
   margin-right: 15px;
   border-radius: 10px;
   color: black;
+}
+
+.resultsh2 {
+  margin-top: 60px;
 }
 
 /* regole contenitore card */
@@ -74,9 +84,8 @@ header h2 {
 .movie-card {
   background-size: cover;
   background-position: center;
-  height: 450px;
+  height: 420px;
   width: 21%;
-
   color: yellow;
   margin-left: 30px;
   margin-bottom: 20px;
@@ -100,14 +109,14 @@ header h2 {
   position: absolute;
   top: 0;
   left: 0;
-  /* height: 450px; */
   width: 88%;
-  height: 88%;
+  height: 91%;
   background: rgba(0, 0, 0, 0.9);
   color: #ffffff;
   background-size: contain;
   padding: 20px;
   display: none;
+  border-radius: 10px;
 }
 
 .card-overlay label {
@@ -115,18 +124,18 @@ header h2 {
 
 }
 
-.overview {
-  font-size: 0.7em;
-}
-
-
-
 .movie-card:hover .card-overlay {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+/* regole trama film/serietv */
+.overview {
+  font-size: 0.7em;
+}
+
 
 /* regole button */
 
@@ -152,19 +161,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
