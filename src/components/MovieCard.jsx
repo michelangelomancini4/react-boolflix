@@ -32,12 +32,16 @@ function MovieCard({ movie }) {
 
                 }}
             >
-                {/* uso di || per differenziare proprietà diverse tra film e serie tv */}
-                <h3>Titolo:{movie.title || movie.name}</h3>
+                {/* gestione output delle info in overlay */}
+                <div className="card-overlay">
+                    <h3>Titolo:{movie.title || movie.name}</h3>
 
-                <p>Titolo originale: {movie.original_title || movie.original_name}</p>
-                <p>Voto: {getStars(movie.vote_average)}</p>
-                <img className="flagpath" src={flagPath} alt={movie.original_language} />
+                    <p>Titolo originale: {movie.original_title || movie.original_name}</p>
+                    <p className="overview">Overview: {movie.overview}</p>
+
+                    <label>Voto: {getStars(movie.vote_average)}</label>
+                    <img className="flagpath" src={flagPath} alt={movie.original_language} />
+                </div>
 
 
             </div>

@@ -76,20 +76,57 @@ header h2 {
   background-position: center;
   height: 450px;
   width: 21%;
-  display: flex;
-  flex-direction: column;
+
   color: yellow;
   margin-left: 30px;
   margin-bottom: 20px;
   text-align: center;
   border-radius: 10px;
+  position: relative;
+}
+
+.standardcard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .flagpath {
   width: 30px;
 }
 
+/* regole overlay card */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* height: 450px; */
+  width: 88%;
+  height: 88%;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  background-size: contain;
+  padding: 20px;
+  display: none;
+}
 
+.card-overlay label {
+  color: #e7e710;
+
+}
+
+.overview {
+  font-size: 0.7em;
+}
+
+
+
+.movie-card:hover .card-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* regole button */
 
