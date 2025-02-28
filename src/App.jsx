@@ -2,8 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 
 // importazione dei componenti
-import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
+import Header from "./components/Header";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -42,7 +42,7 @@ function App() {
     <div>
       <h1>Ricerca Film e serie tv:</h1>
       {/* inclusione componente SearchBar a cui donare la prop handlesearch */}
-      <SearchBar handleSearch={handleSearch} />
+      <Header handleSearch={handleSearch} />
       {/* inclusione componente MovieList a cui donare la prop movies */}
       <MovieList movies={movies} />
     </div>
