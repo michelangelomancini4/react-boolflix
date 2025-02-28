@@ -49,14 +49,23 @@ function MovieDetail() {
                 <Link to={`http://localhost:5173/movie/${id - 1}`} className='prevnext' >&#8678;  PREV- </Link>
                 <Link to={`http://localhost:5173/movie/${parseInt(id) + 1}`} className='prevnext' >-NEXT &#8680;</Link>
             </div >
+            {/* macroblocco pagina dei dettagli film/serie tv */}
             <div className="detailBlockInfo">
+
+                {/* blocco di sinistra con titolo ed immagine */}
                 <div className="movie-detail">
                     <h3>{movie.title || movie.name}</h3>
                     <img
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+
+                        // imposto immagine di default nel caso non fosse disponibile la copertina del film
+                        src={movie.poster_path
+                            ? `https://image.tmdb.org/t/p/w342${movie.poster_path}`
+                            : `https://img.freepik.com/foto-gratuito/popcorn-al-cinema_23-2147988937.jpg?t=st=1740744663~exp=1740748263~hmac=d028b36f8dfa333a920082a832026a11d90d124ae9df706397b2d5f7a704bb59&w=1380`}
                         alt={movie.title || movie.name}
                     />
                 </div>
+
+                {/* blocco di destra con info */}
                 <div className="infofilm">
                     <p><strong>Titolo originale:</strong> {movie.original_title || movie.original_name}</p>
                     <p><strong>Overview:</strong> {movie.overview}</p>
