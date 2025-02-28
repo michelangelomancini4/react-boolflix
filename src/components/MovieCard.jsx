@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 function MovieCard({ movie }) {
     // funzione per calcolare le stelle
     function getStars(vote) {
@@ -34,18 +35,19 @@ function MovieCard({ movie }) {
                         : `url(https://img.freepik.com/foto-gratuito/popcorn-al-cinema_23-2147988937.jpg?t=st=1740744663~exp=1740748263~hmac=d028b36f8dfa333a920082a832026a11d90d124ae9df706397b2d5f7a704bb59&w=1380)`,
                 }}
             >
-                {/* gestione output delle info in overlay */}
-                <div className="card-overlay">
-                    <h3>{movie.title || movie.name}</h3>
+                <NavLink to={`/movie/${movie.id}`}>
+                    {/* gestione output delle info in overlay */}
+                    <div className="card-overlay">
+                        <h3>{movie.title || movie.name}</h3>
 
-                    <p><strong>Titolo originale:</strong> {movie.original_title || movie.original_name}</p>
-                    <p className="overview"><strong>Overview:</strong> {movie.overview}</p>
+                        <p><strong>Titolo originale:</strong> {movie.original_title || movie.original_name}</p>
+                        <p className="overview"><strong>Overview:</strong> {movie.overview}</p>
 
-                    <label><strong>Voto:</strong> {getStars(movie.vote_average)}</label>
-                    <img className="flagpath" src={flagPath} alt={movie.original_language} />
-                </div>
+                        <label><strong>Voto:</strong> {getStars(movie.vote_average)}</label>
+                        <img className="flagpath" src={flagPath} alt={movie.original_language} />
+                    </div>
 
-
+                </NavLink>
             </div >
 
         </>

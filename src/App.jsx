@@ -1,9 +1,12 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
 // importazione dei componenti
 import MovieList from "./components/MovieList";
 import Header from "./components/Header";
+import MovieDetail from "./components/MovieDetail";
+
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -37,19 +40,16 @@ function App() {
       });
     });
   }
-
   return (
-    <div>
-
-      {/* inclusione componente SearchBar a cui donare la prop handlesearch */}
-      <Header handleSearch={handleSearch} />
-      <h2 className="resultsh2">Risultati:</h2>
-      <div >
-        {/* inclusione componente MovieList a cui donare la prop movies */}
-        <MovieList movies={movies} />
+    <Router>
+      <div>
+        <Header handleSearch={handleSearch} />
+        <Routes>
+          <Route path="/" element={<MovieList movies={movies} />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
-
 export default App;
