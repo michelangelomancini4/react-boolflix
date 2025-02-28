@@ -27,9 +27,11 @@ function MovieCard({ movie }) {
         <>
 
             <div className="movie-card"
+                // imposto un'immagine di default se non c'è disponibilità della copertina del film
                 style={{
-                    backgroundImage: `url(https://image.tmdb.org/t/p/w342${movie.poster_path})`,
-
+                    backgroundImage: movie.poster_path
+                        ? `url(https://image.tmdb.org/t/p/w342${movie.poster_path})`
+                        : `url(https://img.freepik.com/foto-gratuito/popcorn-al-cinema_23-2147988937.jpg?t=st=1740744663~exp=1740748263~hmac=d028b36f8dfa333a920082a832026a11d90d124ae9df706397b2d5f7a704bb59&w=1380)`,
                 }}
             >
                 {/* gestione output delle info in overlay */}
@@ -44,7 +46,7 @@ function MovieCard({ movie }) {
                 </div>
 
 
-            </div>
+            </div >
 
         </>
     );
